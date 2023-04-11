@@ -63,7 +63,7 @@ open class DataModelManager<T : DataModel>(
     }
 
     private fun loadEntityFile() {
-        val folder = File("${PixelmonLegend.dataFolder.path}/$dataFolderPath")
+        val folder = File("${PixelmonLegend.instance.dataFolder.path}/$dataFolderPath")
         if (!folder.exists()) {
             folder.mkdirs()
         }
@@ -80,11 +80,11 @@ open class DataModelManager<T : DataModel>(
     }
 
     private fun deleteEntityFile(entity: T) {
-        File(PixelmonLegend.dataFolder.path + "/" + dataFolderPath, entity.fileName).delete()
+        File(PixelmonLegend.instance.dataFolder.path + "/" + dataFolderPath, entity.fileName).delete()
     }
 
     private fun saveEntityFile(entity: T) {
-        val folder = File("${PixelmonLegend.dataFolder.path}/$dataFolderPath")
+        val folder = File("${PixelmonLegend.instance.dataFolder.path}/$dataFolderPath")
         FileOutputStream(File(folder, entity.fileName)).also {
             it.write(json.encodeToString(kSerializer, entity).toByteArray())
             it.flush()

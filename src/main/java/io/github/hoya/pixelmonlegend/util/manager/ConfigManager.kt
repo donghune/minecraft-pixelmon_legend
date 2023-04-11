@@ -18,7 +18,7 @@ open class ConfigManager<T : Config>(
 
     private var data: T = defaultData
 
-    private val folder = File("${PixelmonLegend.dataFolder.path}/$dataFolderPath")
+    private val folder = File("${PixelmonLegend.instance.dataFolder.path}/$dataFolderPath")
     val file = File("$folder", data.fileName)
 
     init {
@@ -35,7 +35,7 @@ open class ConfigManager<T : Config>(
     }
 
     private fun loadConfigFile() {
-        val file = File("${PixelmonLegend.dataFolder.path}/$dataFolderPath", data.fileName)
+        val file = File("${PixelmonLegend.instance.dataFolder.path}/$dataFolderPath", data.fileName)
         if (!file.exists()) {
             folder.mkdirs()
             file.createNewFile()
@@ -47,7 +47,7 @@ open class ConfigManager<T : Config>(
     }
 
     private fun saveConfigFile(data: T) {
-        val file = File(/* parent = */ "${PixelmonLegend.dataFolder.path}/$dataFolderPath", /* child = */ data.fileName)
+        val file = File(/* parent = */ "${PixelmonLegend.instance.dataFolder.path}/$dataFolderPath", /* child = */ data.fileName)
         FileOutputStream(file).also {
             it.write(json.encodeToString(kSerializer, data).toByteArray())
             it.flush()

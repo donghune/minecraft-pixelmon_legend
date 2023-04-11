@@ -10,7 +10,12 @@ import io.github.hoya.pixelmonlegend.utiliy.UtilityService
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.logging.Level
 
-object PixelmonLegend : JavaPlugin() {
+class PixelmonLegend : JavaPlugin() {
+
+    companion object {
+        lateinit var instance: PixelmonLegend
+            private set
+    }
 
     private val services = listOf(
         MessageService(),
@@ -24,6 +29,7 @@ object PixelmonLegend : JavaPlugin() {
 
     override fun onEnable() {
         logger.log(Level.INFO, "On Enable!")
+        instance = this
         services.forEach { it.onEnable(this@PixelmonLegend) }
     }
 

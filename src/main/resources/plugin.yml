@@ -1,3 +1,18 @@
 name: PixelmonLegend
 version: '${version}'
 main: io.github.hoya.pixelmonlegend.PixelmonLegend
+commands:
+  message:
+    description: "about message system"
+  custom-item:
+    description: "about custom-item system"
+  designation:
+    description: "about designation system"
+  economy:
+    description: "about economy system"
+  random-box:
+    description: "about random-box system"
+  regen-block:
+    description: "about regen-block system"
+  utility:
+    description: "about utility system"

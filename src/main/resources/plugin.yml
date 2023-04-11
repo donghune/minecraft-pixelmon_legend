@@ -2,8 +2,11 @@ name: PixelmonLegend
 version: '${version}'
 main: io.github.hoya.pixelmonlegend.PixelmonLegend
 commands:
-  message:
+  chat-announcement:
     description: "about message system"
+    aliases:
+      - ca
+      - 채팅공지
   custom-item:
     description: "about custom-item system"
   designation:

@@ -14,6 +14,6 @@ class EconomyService : BaseService {
     }
 
     override fun onDisable(plugin: JavaPlugin) {
-        TODO("Not yet implemented")
+        
     }
 }

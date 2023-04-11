@@ -14,5 +14,19 @@ commands:
     description: "about random-box system"
   regen-block:
     description: "about regen-block system"
-  utility:
+  give-all:
     description: "about utility system"
+    aliases:
+      - ga
+      - 전체지급
+  torch:
+    description: "about utility system"
+    aliases:
+      - t
+      - 횃불
+      - 토치
+  basic-item:
+    description: "about utility system"
+    aliases:
+      - bi
+      - 기본템
